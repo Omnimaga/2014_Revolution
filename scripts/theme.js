@@ -95,14 +95,14 @@ $(function(){
 		var $sheet = $('<style>').appendTo('head');
 		$('#wrapper').resize(function(){
 			// 90% - 88px - 15em(of .poster)
-			var w = parseFloat($(window).width())*0.9-88-(15*Number(getComputedStyle($('.poster')[0], "").fontSize.match(/(\d*(\.\d*)?)px/)[1]));
+			var w = parseFloat($('#wrapper').width())*0.9-88-(15*Number(getComputedStyle($('.poster')[0], "").fontSize.match(/(\d*(\.\d*)?)px/)[1]));
 			$sheet.html('img.bbc_img{max-width:'+w+'px;}');
 		}).resize();
 	}
 	if($('.dp_news').length > 0){ // front page news
 		$sheet = $('<style>').appendTo('head');
 		$('#wrapper').resize(function(){
-			var w = parseFloat($(window).width())*0.9 - 500;
+			var w = parseFloat($('#wrapper').width())*0.9 - 500;
 			$sheet.html('img.bbc_img{max-width:'+w+'px;}');
 		}).resize();
 	}
